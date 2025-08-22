@@ -2,15 +2,182 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/IV.css">
-  <title>Document</title>
+  <link class="khat" href="../valenzine-wildflower-sans-demo.zip">
+  <title> Love Box</title>
 </head>
 <body>
-  <div class="fader">
-    <div class="btn-dv"><button>save</button></div>
-    <div class="inpt-dv"><input onclick=""></div>
-  </div>
-</body>
+    <div class="glb"></div>
+  <div class="box">
+    <div class="center-text">myself</div>
+    <div class="love-text-bottom">I LOVE YOU</div>
+    </div>
+    <div class="shadow-glb-c"></div>
+    <div class="shadow-glb-b"></div>
+    <div class="shadow-glb-a"></div>
+
+
+    <style>
+         body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff0f5;
+    margin: 0;
+    }
+    .glb {
+    width: 700px;
+    height: 700px ;
+    border: 2px solid #000;
+    position: relative;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background-color: #ffffff;
+    clip-path: url(#heartPath);
+    animation: beat 7s ease-in-out infinite;
+    z-index: 2;
+    }
+
+    .shadow-glb-a {
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    background-color: #d1006c;
+    clip-path: url(#heartPath);
+    animation: shadow-glb-a 7s  infinite ;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+        .shadow-glb-b {
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    background-color: #d1006c;
+    clip-path: url(#heartPath);
+    animation: shadow-glb-b 7s  infinite ;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+        .shadow-glb-c {
+    width: 650px;
+    height: 650px;
+    position: absolute;
+    background-color: blueviolet;
+    clip-path: url(#heartPath);
+    animation: shadow-glb-c 7s  infinite ;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    }
+    
+    
+    @keyframes beat {
+      0%,20% { transform: scale(1); }
+      10% { transform: scale(1.2); }
+    }
+    
+    @keyframes shadow-glb-a {
+      0% { transform: scale(1);    opacity:100% ;}
+      20% { transform: scale();   opacity: 0;}
+      30% { transform: scale(1.7);   opacity: 0;}
+      50% { transform: scale(1);   opacity: 0;}
+    }
+       @keyframes shadow-glb-b {
+      0% { transform: scale(1);    opacity:100% ;}
+      25% { transform: scale();   opacity: 0;}
+      30% { transform: scale(1.4);   opacity: 0;}
+      50% { transform: scale(1);   opacity: 0;}
+    }
+       @keyframes shadow-glb-c {
+      0% { transform: scale(1);    opacity:100% ;}
+      20% { transform: scale();   opacity: 0;}
+      30% { transform: scale(1.9);   opacity: 0;}
+      50% { transform: scale(1);   opacity: 0;}
+    }
+   
+    .gl {
+        background-color: greenyellow;
+        width: calc(100% - 500px);
+        height: calc(100% - 500px);
+      display: flex;
+      justify-items: center;
+      position: absolute;
+      z-index: 2;
+      box-shadow: 1px 1px 10000px red;
+    }
+    
+    .center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff1a75;
+    z-index: 2;
+    padding: 10px;
+    /* border: 2px solid #d1006c; */
+    border-radius: 8px;
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    font-style: "valenzine-wildflower-sans-demo";
+    }
+    .love-text-bottom {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: #ff3385;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+.heart {
+    position: absolute;
+    font-size: 20px;
+    opacity: 0.8;
+    animation: float 5s infinite ease-in-out;
+
+}
+    @keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(20deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+    }
+    @keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.2); }
+}
+.gb {
+  width: 200px;
+  height: 200px;
+  background: red;
+  clip-path: url(#heartPath);
+}
+
+    </style>
+ 
+   <svg width="0" height="0">
+    <clipPath id="heartPath" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,0.9 
+               L0.1,0.5 
+               A0.2,0.2 0 0,1 0.5,0.2 
+               A0.2,0.2 0 0,1 0.9,0.5 
+               Z" />
+    </clipPath>
+  </svg>
+ 
+    <script>
+      const box = document.querySelector('.box');
+      const colors = ['#ff1a75','#ff1a75','#ff1a75','#3399ff'];
+      for (let i = 0; i < 70; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerText = '♥';
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        heart.style.top = Math.random() * 97 + '%';
+        heart.style.left = Math.random() * 97 + '%';
+        heart.style.transform += ` rotate(${Math.random() * 360}deg)`;
+        box.appendChild(heart);
+      }
+    </script>
 </html>
 
+
+
+</html>
