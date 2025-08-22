@@ -37,6 +37,9 @@
     clip-path: url(#heartPath);
     animation: beat 7s ease-in-out infinite;
     z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     }
 
     .shadow-glb-a {
@@ -104,10 +107,8 @@
     }
     
     .center-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -150%);
+    position: relative;
+    top: -50px;    
     font-size: 30px;
     font-weight: bold;
     color: #ff1a75;
